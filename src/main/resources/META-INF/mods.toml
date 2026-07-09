@@ -1,12 +1,11 @@
 modLoader="javafml"
 loaderVersion="[43,)"
-license="All Rights Reserved"
+license="(c) 2023-2026 LDM. All rights reserved."
 
 [[mods]]
 modId="mo_potions"
-version="1.5.1-RELEASE+1.19.2MC"
+version="1.5.2+1.19.2"
 displayName="Mo' Potions"
-credits="N/A"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/mo-potions"
 logoFile="logo.png"
 authors="LDM"
