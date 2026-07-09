@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[43,)"
-license="(c) 2023-2026 LDM. All rights reserved."
+license="(c) 2021-2026 LDM. All rights reserved."
 
 [[mods]]
 modId="mo_potions"
