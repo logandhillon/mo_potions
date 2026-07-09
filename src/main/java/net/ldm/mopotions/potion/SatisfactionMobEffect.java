@@ -22,6 +22,9 @@ public class SatisfactionMobEffect extends MobEffect {
 
         if (player.getFoodData().getSaturationLevel() < 20)
             player.getFoodData().setSaturation(player.getFoodData().getSaturationLevel() + 1);
+
+        if (player.getFoodData().getFoodLevel() < 20)
+            player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() + 1);
     }
 
     @Override
