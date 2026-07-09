@@ -1,86 +1,71 @@
 package net.ldm.mopotions;
 
 import net.ldm.mopotions.init.MoPotionsModItems;
-import net.ldm.mopotions.init.MoPotionsModPotions;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
+import javax.annotation.Nullable;
+
+import static net.ldm.mopotions.init.MoPotionsModPotions.*;
+
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BrewingRecipes {
-	public BrewingRecipes() {
-	}
 
-	@SubscribeEvent
-	public static void init(FMLCommonSetupEvent event) {
-		//Haste
-		PotionBrewing.addMix(Potions.THICK, MoPotionsModItems.FERMENTED_SUGAR.get(), MoPotionsModPotions.HASTE_POTION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.HASTE_POTION.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_HASTE_POTION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.HASTE_POTION.get(), Items.REDSTONE, MoPotionsModPotions.LONG_HASTE_POTION.get());
+    @SubscribeEvent
+    public static void init(FMLCommonSetupEvent event) {
+        //Haste
+        register(Potions.THICK, MoPotionsModItems.FERMENTED_SUGAR.get(), HASTE_POTION.get(), LONG_HASTE_POTION.get(), STRONG_HASTE_POTION.get());
 
-		//Mining Fatigue
-		PotionBrewing.addMix(MoPotionsModPotions.HASTE_POTION.get(), Items.FERMENTED_SPIDER_EYE, MoPotionsModPotions.MINING_FATIGUE_POTION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.STRONG_HASTE_POTION.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_MINING_FATIGUE_POTION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.LONG_HASTE_POTION.get(), Items.REDSTONE, MoPotionsModPotions.LONG_MINING_FATIGUE_POTION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.MINING_FATIGUE_POTION.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_MINING_FATIGUE_POTION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.MINING_FATIGUE_POTION.get(), Items.REDSTONE, MoPotionsModPotions.LONG_MINING_FATIGUE_POTION.get());
+        //Mining Fatigue
+        register(HASTE_POTION.get(), Items.FERMENTED_SPIDER_EYE, MINING_FATIGUE_POTION.get(), LONG_MINING_FATIGUE_POTION.get(), STRONG_MINING_FATIGUE_POTION.get());
 
-		//Nausea
-		PotionBrewing.addMix(Potions.MUNDANE, Items.PUFFERFISH, MoPotionsModPotions.NAUSEA.get());
-		PotionBrewing.addMix(MoPotionsModPotions.NAUSEA.get(), Items.REDSTONE, MoPotionsModPotions.LONG_NAUSEA.get());
+        //Nausea
+        register(Potions.MUNDANE, Items.PUFFERFISH, NAUSEA.get(), LONG_NAUSEA.get(), null);
 
-		//Blindness
-		PotionBrewing.addMix(Potions.THICK, Items.INK_SAC, MoPotionsModPotions.BLINDNESS.get());
-		PotionBrewing.addMix(MoPotionsModPotions.BLINDNESS.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_BLINDNESS.get());
-		PotionBrewing.addMix(MoPotionsModPotions.BLINDNESS.get(), Items.REDSTONE, MoPotionsModPotions.LONG_BLINDNESS.get());
+        //Blindness
+        register(Potions.THICK, Items.INK_SAC, BLINDNESS.get(), LONG_BLINDNESS.get(), STRONG_BLINDNESS.get());
 
-		//Decay
-		PotionBrewing.addMix(Potions.POISON, Items.WITHER_ROSE, MoPotionsModPotions.DECAY.get());
-		PotionBrewing.addMix(MoPotionsModPotions.DECAY.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_DECAY.get());
-		PotionBrewing.addMix(MoPotionsModPotions.DECAY.get(), Items.REDSTONE, MoPotionsModPotions.LONG_DECAY.get());
+        //Decay
+        register(Potions.POISON, Items.WITHER_ROSE, DECAY.get(), LONG_DECAY.get(), STRONG_DECAY.get());
 
-		//Resistance
-		PotionBrewing.addMix(Potions.FIRE_RESISTANCE, Items.FERMENTED_SPIDER_EYE, MoPotionsModPotions.RESISTANCE.get());
-		PotionBrewing.addMix(MoPotionsModPotions.RESISTANCE.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_RESISTANCE.get());
-		PotionBrewing.addMix(MoPotionsModPotions.RESISTANCE.get(), Items.REDSTONE, MoPotionsModPotions.LONG_RESISTANCE.get());
+        //Resistance
+        register(Potions.FIRE_RESISTANCE, Items.FERMENTED_SPIDER_EYE, RESISTANCE.get(), LONG_RESISTANCE.get(), STRONG_RESISTANCE.get());
 
-		//Glowing
-		PotionBrewing.addMix(Potions.THICK, Items.GLOWSTONE_DUST, MoPotionsModPotions.GLOWING.get());
-		PotionBrewing.addMix(MoPotionsModPotions.GLOWING.get(), Items.REDSTONE, MoPotionsModPotions.LONG_GLOWING.get());
+        //Glowing
+        register(Potions.THICK, Items.GLOWSTONE_DUST, GLOWING.get(), LONG_GLOWING.get(), null);
 
-		//Levitation
-		PotionBrewing.addMix(Potions.SLOW_FALLING, Items.FERMENTED_SPIDER_EYE, MoPotionsModPotions.LEVITATION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.LEVITATION.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_LEVITATION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.LEVITATION.get(), Items.REDSTONE, MoPotionsModPotions.LONG_LEVITATION.get());
+        //Levitation
+        register(Potions.SLOW_FALLING, Items.FERMENTED_SPIDER_EYE, LEVITATION.get(), LONG_LEVITATION.get(), STRONG_LEVITATION.get());
 
-		//Satisfaction (int. name "Satisfaction")
-		PotionBrewing.addMix(Potions.MUNDANE, Items.GOLDEN_CARROT, MoPotionsModPotions.SATISFACTION_POTION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.SATISFACTION_POTION.get(), Items.REDSTONE, MoPotionsModPotions.LONG_SATISFACTION.get());
+        //Satisfaction
+        register(Potions.MUNDANE, Items.GOLDEN_CARROT, SATISFACTION_POTION.get(), LONG_SATISFACTION.get(), null);
 
-		//Hunger
-		PotionBrewing.addMix(Potions.MUNDANE, Items.ROTTEN_FLESH, MoPotionsModPotions.HUNGER.get());
-		PotionBrewing.addMix(MoPotionsModPotions.HUNGER.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_HUNGER.get());
-		PotionBrewing.addMix(MoPotionsModPotions.HUNGER.get(), Items.REDSTONE, MoPotionsModPotions.LONG_HUNGER.get());
+        //Hunger
+        register(Potions.MUNDANE, Items.ROTTEN_FLESH, HUNGER.get(), LONG_HUNGER.get(), STRONG_HUNGER.get());
 
-		//Absorption
-		PotionBrewing.addMix(Potions.HEALING, Items.GOLDEN_CARROT, MoPotionsModPotions.ABSORPTION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.ABSORPTION.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_ABSORPTION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.ABSORPTION.get(), Items.REDSTONE, MoPotionsModPotions.LONG_ABSORPTION.get());
+        //Absorption
+        register(Potions.HEALING, Items.GOLDEN_CARROT, ABSORPTION.get(), LONG_ABSORPTION.get(), STRONG_ABSORPTION.get());
 
-		//Luck
-		PotionBrewing.addMix(Potions.LEAPING, Items.GLISTERING_MELON_SLICE, MoPotionsModPotions.LUCK.get());
-		PotionBrewing.addMix(MoPotionsModPotions.LUCK.get(), Items.REDSTONE, MoPotionsModPotions.LONG_LUCK.get());
+        //Luck
+        register(Potions.LEAPING, Items.GLISTERING_MELON_SLICE, LUCK.get(), LONG_LUCK.get(), null);
 
-		//Bad Luck (minecraft:unluck)
-		PotionBrewing.addMix(MoPotionsModPotions.LUCK.get(), Items.HEART_OF_THE_SEA, MoPotionsModPotions.CONDUIT_POWER.get());
-		PotionBrewing.addMix(MoPotionsModPotions.CONDUIT_POWER.get(), Items.REDSTONE, MoPotionsModPotions.LONG_CONDUIT_POWER.get());
+        //Bad Luck (minecraft:unluck)
+        register(LUCK.get(), Items.FERMENTED_SPIDER_EYE, BAD_LUCK.get(), LONG_BAD_LUCK.get(), null);
 
-		//Conduit Power
-		PotionBrewing.addMix(Potions.WATER_BREATHING, Items.FERMENTED_SPIDER_EYE, MoPotionsModPotions.LEVITATION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.LEVITATION.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_LEVITATION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.LEVITATION.get(), Items.REDSTONE, MoPotionsModPotions.LONG_LEVITATION.get());
-	}
+        //Conduit Power
+        register(Potions.WATER_BREATHING, Items.HEART_OF_THE_SEA, CONDUIT_POWER.get(), LONG_CONDUIT_POWER.get(), null);
+    }
+
+    private static void register(Potion base, Item ingredient, Potion resultDefault, @Nullable Potion resultLong,
+                                 @Nullable Potion resultStrong) {
+        PotionBrewing.addMix(base, ingredient, resultDefault);
+        if (resultLong != null) PotionBrewing.addMix(resultDefault, Items.REDSTONE, resultLong);
+        if (resultStrong != null) PotionBrewing.addMix(resultDefault, Items.GLOWSTONE_DUST, resultStrong);
+    }
 }
