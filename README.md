@@ -1,27 +1,43 @@
-#### **![](https://i.imgur.com/SDUSNyz.png)**
+#### **![Banner for Mo' Potions: Adds more potions to Minecraft!](./docs/img/banner.png)**
 
-### _**The 1.18.X update is here!**_
+Mo' Potions adds a bunch of brewable potions to the game, so you can brew stuff you never could before!
 
-#### **Mo' Potions adds a bunch of brewable potions to the game, so you can brew stuff you never could before!**
-
-##### Don't forget, I'm still adding potions to this mod, custom or not, and if YOU have an idea, [join my discord](https://discord.gg/GsUqxzj)!
-
-#### Now you can brew almost anything, from a Potion of Haste to an Arrow of Blindness!
-
-#### For a more up-to-date potion/advancement list, [go here](https://bit.ly/3lfkCF1).
+Now, you can brew almost anything, from a Potion of Haste to an Arrow of Blindness!
 
 ### **Potions and their Recipes**
 
-#### Last Updated - v1.4.2 (April 5th, 2022)
+| Potion Name              | Given Effect   | Base                      | Ingredient           | Description                                                                  |
+|--------------------------|----------------|---------------------------|----------------------|------------------------------------------------------------------------------|
+| Potion of Haste          | Haste          | Thick Potion              | Fermented Sugar      | Makes you mine faster and boosts attack speed                                |
+| Potion of Mining Fatigue | Mining Fatigue | Potion of Haste           | Fermented Spider Eye | Makes you mine slower and slows attack speed                                 |
+| Potion of Nausea         | Nausea         | Mundane Potion            | Pufferfish           | Makes you nauseous                                                           |
+| Potion of Blindness      | Blindness      | Thick Potion              | Ink Sac              | Surronds the player with a thick black fog                                   |
+| Potion of Decay          | Wither         | Potion of Poison          | Wither Rose          | Poisons the mob with a poison that will kill the mob, not leave it on ½ ❤️   |
+| Potion of Resistance     | Resistance     | Potion of Fire Resistance | Fermented Spider Eye | Reduces damage taken                                                         |
+| Potion of Glowing        | Glowing        | Thick Potion              | Glowstone Dust       | Makes the consumer glow                                                      |
+| Potion of Levitation     | Levitation     | Potion of Slow Falling    | Fermented Spider Eye | Makes the consumer slowly levitate                                           |
+| Potion of Satisfaction   | Satisfaction   | Mundane Potion            | Golden Carrot        | Removes the need to eat, fully saturating you and filling your hunger bar    |
+| Potion of Hunger         | Hunger         | Potion of Satisfaction    | Fermented Spider Eye | Lowers your saturation and makes you lose hunger quicker                     |
+| Potion of Absorption     | Absorption     | Potion of Healing         | Golden Carrot        | Gives the mob 2 💛, which are lost on damage                                 |
+| Potion of Luck           | Luck           | Potion of Leaping         | Glistering Melon     | Increases the chance of getting good loot from natural chests, fishing, etc. |
+| Potion of Bad Luck       | Unluck         | Potion of Luck            | Fermented Spider Eye | Decreases the chance of getting good loot from natural chests, fishing, etc. |
+| Potion of Conduit Power  | Conduit Power  | Potion of Water Breathing | Heart of the Sea     | Allows you to see, breathe, and mine quicker underwater                      |
 
-![](https://i.imgur.com/rbUE36W.png)
+- To craft Tipped Arrows, combine 8 arrows and one lingering potion of your choice in a crafting table
+- Some potions can last longer when brewed with redstone dust, and become stronger when brewed with glowstone dust
 
 ### **Advancements**
 
-#### Last Updated - v1.4 (April 5th, 2022)
+| Advancement | Description                                                        | Actual Requirements (If Different)                                       |
+|-------------|--------------------------------------------------------------------|--------------------------------------------------------------------------|
+| Finally!    | Mine an obsidian/crying obsidian block while having Mining Fatigue |                                                                          |
+| Satisfied   | Drink a Potion of Satisfaction at the starving point               | Drink a Potion of Satisfaction when your hunger bar is empty.            |
+| Iron Belly  | Stop starvation using Rotten Flesh                                 | Consume Rotten Flesh at an empty hunger bar.                             |
+| Resilience  | Drink a Potion of Resistance                                       |                                                                          |
+| Risk Taker  | Defy the void and levitate out of it                               | Drink a Potion of Levitation below Y: -64 (or Y: 0 in The End or Nether) |
 
-![](https://i.imgur.com/W9j6157.png)
+### **Questions? Suggestions? Just want to chat? Join the [Discord](https://discord.gg/GsUqxzj)!**
 
-#### **Questions? Suggestions? Just want to chat? Join the [discord](https://discord.gg/GsUqxzj "Discord Invite").**
-
-[![](https://i.imgur.com/2Hl3iZu.png)](https://discord.gg/GsUqxzj "Discord Invite")
+> I'm open to suggestions! Have ideas for this mod? Create a GitHub Issue or say something in the Discord server.
+>
+>[<img alt="Discord logo" height="64" src="https://i.imgur.com/2Hl3iZu.png"/>](https://discord.gg/GsUqxzj)
