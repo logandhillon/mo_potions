@@ -65,9 +65,9 @@ public class BrewingRecipes {
 		PotionBrewing.addMix(MoPotionsModPotions.LEVITATION.get(), Items.GLOWSTONE_DUST, MoPotionsModPotions.STRONG_LEVITATION.get());
 		PotionBrewing.addMix(MoPotionsModPotions.LEVITATION.get(), Items.REDSTONE, MoPotionsModPotions.LONG_LEVITATION.get());
 
-		//Satisfaction (int. name "Satisfacation")
-		PotionBrewing.addMix(Potions.MUNDANE, Items.GOLDEN_CARROT, MoPotionsModPotions.SATISFACATION_POTION.get());
-		PotionBrewing.addMix(MoPotionsModPotions.SATISFACATION_POTION.get(), Items.REDSTONE, MoPotionsModPotions.LONG_SATISFACATION.get());
+		//Satisfaction (int. name "Satisfaction")
+		PotionBrewing.addMix(Potions.MUNDANE, Items.GOLDEN_CARROT, MoPotionsModPotions.SATISFACTION_POTION.get());
+		PotionBrewing.addMix(MoPotionsModPotions.SATISFACTION_POTION.get(), Items.REDSTONE, MoPotionsModPotions.LONG_SATISFACTION.get());
 
 		//Hunger
 		PotionBrewing.addMix(Potions.MUNDANE, Items.ROTTEN_FLESH, MoPotionsModPotions.HUNGER.get());

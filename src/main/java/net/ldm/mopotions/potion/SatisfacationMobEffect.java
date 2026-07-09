@@ -5,10 +5,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;
 
-import net.ldm.mopotions.procedures.SatisfacationEffectTickHelperProcedure;
+import net.ldm.mopotions.procedures.SatisfactionEffectTickHelperProcedure;
 
-public class SatisfacationMobEffect extends MobEffect {
-	public SatisfacationMobEffect() {
+public class SatisfactionMobEffect extends MobEffect {
+	public SatisfactionMobEffect() {
 		super(MobEffectCategory.BENEFICIAL, -5287392);
 	}
 
@@ -19,7 +19,7 @@ public class SatisfacationMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		SatisfacationEffectTickHelperProcedure.execute(entity);
+		SatisfactionEffectTickHelperProcedure.execute(entity);
 	}
 
 	@Override
