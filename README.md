@@ -1,5 +1,8 @@
 #### **![Banner for Mo' Potions: Adds more potions to Minecraft!](./docs/img/banner.png)**
 
+> [!NOTE]
+> Mo' Potions is a **Forge** mod. There are no plans to support other mod loaders.
+
 Mo' Potions adds a bunch of brewable potions to the game, so you can brew stuff you never could before!
 
 Now, you can brew almost anything, from a Potion of Haste to an Arrow of Blindness!
