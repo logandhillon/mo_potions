@@ -1,7 +1,3 @@
-
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package net.ldm.mopotions.init;
 
 import net.minecraftforge.registries.RegistryObject;
@@ -15,7 +11,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.ldm.mopotions.MoPotionsMod;
 
 public class MoPotionsModPotions {
-	public static final DeferredRegister<Potion> REGISTRY = DeferredRegister.create(ForgeRegistries.POTIONS, MoPotionsMod.MODID);
+	public static final DeferredRegister<Potion> REGISTRY = DeferredRegister.create(ForgeRegistries.POTIONS, MoPotionsMod.MOD_ID);
 	public static final RegistryObject<Potion> HASTE_POTION = REGISTRY.register("haste_potion",
 			() -> new Potion(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 0, false, true)));
 	public static final RegistryObject<Potion> STRONG_HASTE_POTION = REGISTRY.register("strong_haste_potion",

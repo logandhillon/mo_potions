@@ -11,7 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MoPotionsModSounds {
 	//public static Map<ResourceLocation, SoundEvent> REGISTRY = new HashMap<>();
-	public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MoPotionsMod.MODID);
+	public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MoPotionsMod.MOD_ID);
 
 	static {
 		REGISTRY.register("potions.roll_it_back.activate", () ->
