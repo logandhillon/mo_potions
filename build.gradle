@@ -62,3 +62,14 @@ dependencies {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("META-INF/mods.toml") {
+        expand "file": [
+                jarVersion: project.version,
+                currentYear: new Date().format("yyyy")
+        ]
+    }
+}
