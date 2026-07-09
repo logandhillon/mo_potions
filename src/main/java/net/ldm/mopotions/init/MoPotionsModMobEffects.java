@@ -1,19 +1,16 @@
-
-/*
- *	MCreator note: This file will be REGENERATED on each build.
- */
 package net.ldm.mopotions.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
-
-import net.minecraft.world.effect.MobEffect;
-
-import net.ldm.mopotions.potion.SatisfacationMobEffect;
 import net.ldm.mopotions.MoPotionsMod;
+import net.ldm.mopotions.potion.SatisfactionMobEffect;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class MoPotionsModMobEffects {
-	public static final DeferredRegister<MobEffect> REGISTRY = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, MoPotionsMod.MODID);
-	public static final RegistryObject<MobEffect> SATISFACTION = REGISTRY.register("satisfaction", () -> new SatisfacationMobEffect());
+    public static final DeferredRegister<MobEffect> REGISTRY = DeferredRegister.create(
+            ForgeRegistries.MOB_EFFECTS, MoPotionsMod.MOD_ID);
+
+    public static final RegistryObject<MobEffect> SATISFACTION = REGISTRY.register(
+            "satisfaction", SatisfactionMobEffect::new);
 }

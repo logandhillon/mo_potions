@@ -1,7 +1,3 @@
-
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package net.ldm.mopotions.init;
 
 import net.minecraftforge.registries.RegistryObject;
@@ -15,7 +11,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.ldm.mopotions.MoPotionsMod;
 
 public class MoPotionsModPotions {
-	public static final DeferredRegister<Potion> REGISTRY = DeferredRegister.create(ForgeRegistries.POTIONS, MoPotionsMod.MODID);
+	public static final DeferredRegister<Potion> REGISTRY = DeferredRegister.create(ForgeRegistries.POTIONS, MoPotionsMod.MOD_ID);
 	public static final RegistryObject<Potion> HASTE_POTION = REGISTRY.register("haste_potion",
 			() -> new Potion(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 0, false, true)));
 	public static final RegistryObject<Potion> STRONG_HASTE_POTION = REGISTRY.register("strong_haste_potion",
@@ -60,9 +56,9 @@ public class MoPotionsModPotions {
 			() -> new Potion(new MobEffectInstance(MobEffects.LEVITATION, 400, 1, false, true)));
 	public static final RegistryObject<Potion> LONG_LEVITATION = REGISTRY.register("long_levitation",
 			() -> new Potion(new MobEffectInstance(MobEffects.LEVITATION, 900, 0, false, true)));
-	public static final RegistryObject<Potion> SATISFACATION_POTION = REGISTRY.register("satisfacation_potion",
+	public static final RegistryObject<Potion> SATISFACTION_POTION = REGISTRY.register("satisfaction_potion",
 			() -> new Potion(new MobEffectInstance(MoPotionsModMobEffects.SATISFACTION.get(), 600, 0, false, true)));
-	public static final RegistryObject<Potion> LONG_SATISFACATION = REGISTRY.register("long_satisfacation",
+	public static final RegistryObject<Potion> LONG_SATISFACTION = REGISTRY.register("long_satisfaction",
 			() -> new Potion(new MobEffectInstance(MoPotionsModMobEffects.SATISFACTION.get(), 1000, 0, false, true)));
 	public static final RegistryObject<Potion> HUNGER = REGISTRY.register("hunger",
 			() -> new Potion(new MobEffectInstance(MobEffects.HUNGER, 1800, 0, false, true)));
