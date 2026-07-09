@@ -4,7 +4,7 @@ license="(c) 2021-2026 LDM. All rights reserved."
 
 [[mods]]
 modId="mo_potions"
-version="1.5.2+1.19.2"
+version="1.5.3"
 displayName="Mo' Potions"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/mo-potions"
 logoFile="logo.png"

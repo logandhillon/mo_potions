@@ -1,22 +1,13 @@
 package net.ldm.mopotions;
 
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Item;
-
-import net.ldm.mopotions.init.MoPotionsModPotions;
 import net.ldm.mopotions.init.MoPotionsModItems;
-
-//import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.ldm.mopotions.init.MoPotionsModPotions;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
-
-import java.lang.reflect.Method;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BrewingRecipes {
