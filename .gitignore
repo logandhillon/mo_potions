@@ -1,40 +1,25 @@
-run/
+# Gradle
 .gradle/
 build/
-gradle-app.setting
+!gradle-wrapper.jar
 
-## IntelliJ IDEA
-
-.idea/
-*.iml
+# IDEs
+.settings/
+.classpath
+.project
 *.iws
 *.ipr
+*.iml
+.metadata/
 
-## Eclipse
+# Minecraft & Forge
+run/
+out/
+logs/
+debug/
+src/generated/.*
+crash-reports/
 
-eclipse/
-*.pydevproject
-.project
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
-
-# External tool builders
-.externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# CDT-specific
-.cproject
-
-# PDT-specific
-.buildpath
+# OS/Other
+.DS_Store
+Thumbs.db
