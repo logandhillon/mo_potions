@@ -13,12 +13,10 @@ buildscript {
 
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
-// TODO: remove this plugin
-//apply plugin: 'eclipse'
 
-version = modVersion
-group = projectGroup
-archivesBaseName = modID
+version = mod_version
+group = "net.ldm.mo_potions"
+archivesBaseName = mod_id
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -65,12 +63,15 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 processResources {
-    inputs.property "version", project.version
+    var modProperties = [
+            mod_version: project.version,
+            mc_version : mc_version,
+            year       : new Date().format("yyyy")
+    ]
+
+    inputs.properties(modProperties)
 
     filesMatching("META-INF/mods.toml") {
-        expand "file": [
-                jarVersion: project.version,
-                currentYear: new Date().format("yyyy")
-        ]
+        expand(modProperties)
     }
 }
