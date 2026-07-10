@@ -34,6 +34,7 @@ public class LangProvider extends LanguageProvider {
 
         // Advancements
         addAdvancement("iron_belly", "Iron Belly", "Save yourself from starvation using rotten flesh");
+        addAdvancement("drink_satisfaction", "Artificially Satiated", "Drink a potion of satisfaction");
     }
 
     private void addAdvancement(String key, String title, String description) {

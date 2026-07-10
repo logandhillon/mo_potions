@@ -2,8 +2,11 @@ package net.ldm.mopotions.datagen;
 
 import net.ldm.mopotions.MoPotionsMod;
 import net.ldm.mopotions.criteria.trigger.StarvingRottenFleshTrigger;
+import net.ldm.mopotions.init.MoPotionsEffects;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.critereon.EffectsChangedTrigger;
+import net.minecraft.advancements.critereon.MobEffectsPredicate;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
@@ -46,6 +49,26 @@ public class AdvancementProvider extends ForgeAdvancementProvider {
                                        saver,
                                        ResourceLocation.fromNamespaceAndPath(
                                                MoPotionsMod.MOD_ID, "adventure/iron_belly"), existingFileHelper);
+
+            Advancement.Builder.advancement()
+                               .parent(ResourceLocation.withDefaultNamespace("nether/brew_potion"))
+                               .display(
+                                       Items.GOLDEN_CARROT,
+                                       Component.translatable("advancement.mo_potions.drink_satisfaction.title"),
+                                       Component.translatable("advancement.mo_potions.drink_satisfaction.description"),
+                                       null,
+                                       FrameType.TASK,
+                                       true,
+                                       true,
+                                       false)
+                               .addCriterion(
+                                       "drink_satisfaction_potion",
+                                       EffectsChangedTrigger.TriggerInstance.hasEffects(
+                                               MobEffectsPredicate.effects().and(MoPotionsEffects.SATISFACTION.get())))
+                               .save(
+                                       saver,
+                                       ResourceLocation.fromNamespaceAndPath(
+                                               MoPotionsMod.MOD_ID, "nether/drink_satisfaction"), existingFileHelper);
         }
     }
 }
