@@ -3,6 +3,7 @@ package net.ldm.mopotions;
 import net.ldm.mopotions.init.MoPotionsItems;
 import net.ldm.mopotions.init.MoPotionsEffects;
 import net.ldm.mopotions.init.MoPotionsPotions;
+import net.ldm.mopotions.init.ModCriteria;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -21,5 +22,6 @@ public class MoPotionsMod {
         MoPotionsItems.REGISTRY.register(bus);
         MoPotionsEffects.REGISTRY.register(bus);
         MoPotionsPotions.REGISTRY.register(bus);
+        ModCriteria.init();
     }
 }
