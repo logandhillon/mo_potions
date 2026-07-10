@@ -17,7 +17,7 @@ run/
 out/
 logs/
 debug/
-src/generated/.*
+src/generated/*
 crash-reports/
 
 # OS/Other
