@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[43,)"
-license="(c) 2021-${file.currentYear} LDM. All rights reserved."
+loaderVersion="[47,)"
+license="(c) 2021-${year} LDM. All rights reserved."
 
 [[mods]]
 modId="mo_potions"
-version="${file.jarVersion}"
+version="${mod_version}"
 displayName="Mo' Potions"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/mo-potions"
 logoFile="logo.png"
@@ -16,7 +16,7 @@ Adds more potions to Minecraft! You can now brew almost anything, from Haste to 
 [[dependencies.mo_potions]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2]"
+    versionRange="[${mc_version}]"
     ordering="NONE"
     side="BOTH"
 

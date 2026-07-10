@@ -1,8 +1,8 @@
 package net.ldm.mopotions;
 
-import net.ldm.mopotions.init.MoPotionsModItems;
-import net.ldm.mopotions.init.MoPotionsModMobEffects;
-import net.ldm.mopotions.init.MoPotionsModPotions;
+import net.ldm.mopotions.init.MoPotionsItems;
+import net.ldm.mopotions.init.MoPotionsEffects;
+import net.ldm.mopotions.init.MoPotionsPotions;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -18,8 +18,8 @@ public class MoPotionsMod {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 //		MoPotionsModBlocks.REGISTRY.register(bus);
 //		MoPotionsModBlockEntities.REGISTRY.register(bus);
-        MoPotionsModItems.REGISTRY.register(bus);
-        MoPotionsModMobEffects.REGISTRY.register(bus);
-        MoPotionsModPotions.REGISTRY.register(bus);
+        MoPotionsItems.REGISTRY.register(bus);
+        MoPotionsEffects.REGISTRY.register(bus);
+        MoPotionsPotions.REGISTRY.register(bus);
     }
 }

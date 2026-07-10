@@ -13,16 +13,15 @@ buildscript {
 
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'eclipse'
 
-version = modVersion
-group = projectGroup
-archivesBaseName = modID
+version = mod_version
+group = "net.ldm.mo_potions"
+archivesBaseName = mod_id
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'parchment', version: '2022.11.06-1.19.2'
+    mappings channel: 'parchment', version: '2023.09.03-1.20.1'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -34,7 +33,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                mo_potions {
                     source sourceSets.main
                 }
             }
@@ -47,7 +46,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                mo_potions {
                     source sourceSets.main
                 }
             }
@@ -56,20 +55,23 @@ minecraft {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.2-43.1.1'
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.10'
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.encoding = 'UTF-8'
 }
 
 processResources {
-    inputs.property "version", project.version
+    var modProperties = [
+            mod_version: project.version,
+            mc_version : mc_version,
+            year       : new Date().format("yyyy")
+    ]
+
+    inputs.properties(modProperties)
 
     filesMatching("META-INF/mods.toml") {
-        expand "file": [
-                jarVersion: project.version,
-                currentYear: new Date().format("yyyy")
-        ]
+        expand(modProperties)
     }
 }
