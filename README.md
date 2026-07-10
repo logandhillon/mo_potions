@@ -7,7 +7,7 @@ Mo' Potions adds a bunch of brewable potions to the game, so you can brew stuff 
 
 Now, you can brew almost anything, from a Potion of Haste to an Arrow of Blindness!
 
-### **Potions and their Recipes**
+### Potions
 
 | Potion Name              | Given Effect   | Base                      | Ingredient           | Description                                                                  |
 |--------------------------|----------------|---------------------------|----------------------|------------------------------------------------------------------------------|
@@ -29,15 +29,9 @@ Now, you can brew almost anything, from a Potion of Haste to an Arrow of Blindne
 - To craft Tipped Arrows, combine 8 arrows and one lingering potion of your choice in a crafting table
 - Some potions can last longer when brewed with redstone dust, and become stronger when brewed with glowstone dust
 
-### **Advancements**
+### Other Features
 
-| Advancement | Description                                                        | Actual Requirements (If Different)                                       |
-|-------------|--------------------------------------------------------------------|--------------------------------------------------------------------------|
-| Finally!    | Mine an obsidian/crying obsidian block while having Mining Fatigue |                                                                          |
-| Satisfied   | Drink a Potion of Satisfaction at the starving point               | Drink a Potion of Satisfaction when your hunger bar is empty.            |
-| Iron Belly  | Stop starvation using Rotten Flesh                                 | Consume Rotten Flesh at an empty hunger bar.                             |
-| Resilience  | Drink a Potion of Resistance                                       |                                                                          |
-| Risk Taker  | Defy the void and levitate out of it                               | Drink a Potion of Levitation below Y: -64 (or Y: 0 in The End or Nether) |
+This mod adds a few advancements, ingredients, and more. Download now and discover!
 
 ### **Questions? Suggestions? Just want to chat? Join the [Discord](https://discord.gg/GsUqxzj)!**
 
