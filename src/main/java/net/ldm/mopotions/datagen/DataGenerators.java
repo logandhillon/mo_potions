@@ -18,6 +18,7 @@ public class DataGenerators {
         PackOutput pack = gen.getPackOutput();
 
         gen.addProvider(event.includeClient(), new LangProvider(pack));
+        gen.addProvider(event.includeClient(), new ModItemModelProvider(pack, event.getExistingFileHelper()));
 
         gen.addProvider(
                 event.includeServer(),
