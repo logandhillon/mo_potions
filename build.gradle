@@ -14,7 +14,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
-version = mod_version
+version = "${mod_version}+${mc_version}"
 group = "net.ldm.mo_potions"
 archivesBaseName = mod_id
 
