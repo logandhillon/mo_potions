@@ -1,71 +1,84 @@
 package net.ldm.mopotions;
 
 import net.ldm.mopotions.init.ModItems;
+import net.minecraft.core.Holder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 
 import javax.annotation.Nullable;
 
 import static net.ldm.mopotions.init.ModPotions.*;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 public class BrewingRecipes {
 
     @SubscribeEvent
-    public static void init(FMLCommonSetupEvent event) {
+    public static void onRegisterEvent(RegisterBrewingRecipesEvent event) {
+        PotionBrewing.Builder builder = event.getBuilder();
+
         //Haste
-        register(Potions.THICK, ModItems.FERMENTED_SUGAR.get(), HASTE_POTION.get(), LONG_HASTE_POTION.get(), STRONG_HASTE_POTION.get());
+        register(
+                builder, Potions.THICK, ModItems.FERMENTED_SUGAR.value(), HASTE_POTION, LONG_HASTE_POTION,
+                STRONG_HASTE_POTION);
 
         //Mining Fatigue
-        register(HASTE_POTION.get(), Items.FERMENTED_SPIDER_EYE, MINING_FATIGUE_POTION.get(), LONG_MINING_FATIGUE_POTION.get(), STRONG_MINING_FATIGUE_POTION.get());
+        register(
+                builder, HASTE_POTION, Items.FERMENTED_SPIDER_EYE, MINING_FATIGUE_POTION, LONG_MINING_FATIGUE_POTION,
+                STRONG_MINING_FATIGUE_POTION);
 
         //Nausea
-        register(Potions.MUNDANE, Items.PUFFERFISH, NAUSEA.get(), LONG_NAUSEA.get(), null);
+        register(builder, Potions.MUNDANE, Items.PUFFERFISH, NAUSEA, LONG_NAUSEA, null);
 
         //Blindness
-        register(Potions.THICK, Items.INK_SAC, BLINDNESS.get(), LONG_BLINDNESS.get(), STRONG_BLINDNESS.get());
+        register(builder, Potions.THICK, Items.INK_SAC, BLINDNESS, LONG_BLINDNESS, STRONG_BLINDNESS);
 
         //Decay
-        register(Potions.POISON, Items.WITHER_ROSE, DECAY.get(), LONG_DECAY.get(), STRONG_DECAY.get());
+        register(builder, Potions.POISON, Items.WITHER_ROSE, DECAY, LONG_DECAY, STRONG_DECAY);
 
         //Resistance
-        register(Potions.FIRE_RESISTANCE, Items.FERMENTED_SPIDER_EYE, RESISTANCE.get(), LONG_RESISTANCE.get(), STRONG_RESISTANCE.get());
+        register(
+                builder, Potions.FIRE_RESISTANCE, Items.FERMENTED_SPIDER_EYE, RESISTANCE, LONG_RESISTANCE,
+                STRONG_RESISTANCE);
 
         //Glowing
-        register(Potions.THICK, Items.GLOWSTONE_DUST, GLOWING.get(), LONG_GLOWING.get(), null);
+        register(builder, Potions.THICK, Items.GLOWSTONE_DUST, GLOWING, LONG_GLOWING, null);
 
         //Levitation
-        register(Potions.SLOW_FALLING, Items.FERMENTED_SPIDER_EYE, LEVITATION.get(), LONG_LEVITATION.get(), STRONG_LEVITATION.get());
+        register(
+                builder, Potions.SLOW_FALLING, Items.FERMENTED_SPIDER_EYE, LEVITATION, LONG_LEVITATION,
+                STRONG_LEVITATION);
 
         //Satisfaction
-        register(Potions.MUNDANE, Items.GOLDEN_CARROT, SATISFACTION_POTION.get(), LONG_SATISFACTION.get(), null);
+        register(builder, Potions.MUNDANE, Items.GOLDEN_CARROT, SATISFACTION_POTION, LONG_SATISFACTION, null);
 
         //Hunger
-        register(Potions.MUNDANE, Items.ROTTEN_FLESH, HUNGER.get(), LONG_HUNGER.get(), STRONG_HUNGER.get());
+        register(builder, Potions.MUNDANE, Items.ROTTEN_FLESH, HUNGER, LONG_HUNGER, STRONG_HUNGER);
 
         //Absorption
-        register(Potions.HEALING, Items.GOLDEN_CARROT, ABSORPTION.get(), LONG_ABSORPTION.get(), STRONG_ABSORPTION.get());
+        register(builder, Potions.HEALING, Items.GOLDEN_CARROT, ABSORPTION, LONG_ABSORPTION, STRONG_ABSORPTION);
 
         //Luck
-        register(Potions.LEAPING, Items.GLISTERING_MELON_SLICE, LUCK.get(), LONG_LUCK.get(), null);
+        register(builder, Potions.LEAPING, Items.GLISTERING_MELON_SLICE, LUCK, LONG_LUCK, null);
 
         //Bad Luck (minecraft:unluck)
-        register(LUCK.get(), Items.FERMENTED_SPIDER_EYE, BAD_LUCK.get(), LONG_BAD_LUCK.get(), null);
+        register(builder, LUCK, Items.FERMENTED_SPIDER_EYE, BAD_LUCK, LONG_BAD_LUCK, null);
 
         //Conduit Power
-        register(Potions.WATER_BREATHING, Items.HEART_OF_THE_SEA, CONDUIT_POWER.get(), LONG_CONDUIT_POWER.get(), null);
+        register(builder, Potions.WATER_BREATHING, Items.HEART_OF_THE_SEA, CONDUIT_POWER, LONG_CONDUIT_POWER, null);
     }
 
-    private static void register(Potion base, Item ingredient, Potion resultDefault, @Nullable Potion resultLong,
-                                 @Nullable Potion resultStrong) {
-        PotionBrewing.addMix(base, ingredient, resultDefault);
-        if (resultLong != null) PotionBrewing.addMix(resultDefault, Items.REDSTONE, resultLong);
-        if (resultStrong != null) PotionBrewing.addMix(resultDefault, Items.GLOWSTONE_DUST, resultStrong);
+    private static void register(
+            PotionBrewing.Builder builder, Holder<Potion> base, Item ingredient, Holder<Potion> resultDefault,
+            @Nullable Holder<Potion> resultLong, @Nullable Holder<Potion> resultStrong
+    ) {
+        builder.addMix(base, ingredient, resultDefault);
+        if (resultLong != null) builder.addMix(resultDefault, Items.REDSTONE, resultLong);
+        if (resultStrong != null) builder.addMix(resultDefault, Items.GLOWSTONE_DUST, resultStrong);
     }
 }
