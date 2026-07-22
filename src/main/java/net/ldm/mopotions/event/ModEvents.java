@@ -1,18 +1,16 @@
 package net.ldm.mopotions.event;
 
-import net.ldm.mopotions.MoPotions;
 import net.ldm.mopotions.init.ModCriteria;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 
 /**
  * @author Logan Dhillon
  */
-@Mod.EventBusSubscriber(modid = MoPotions.MOD_ID, bus = Bus.FORGE)
+@EventBusSubscriber
 public class ModEvents {
     @SubscribeEvent
     public static void onItemConsumed(LivingEntityUseItemEvent.Finish event) {
@@ -20,6 +18,6 @@ public class ModEvents {
             return;
 
         if (event.getItem().is(Items.ROTTEN_FLESH) && player.getFoodData().getFoodLevel() <= 5) // since post-eating
-            ModCriteria.STARVING_ROTTEN_FLESH.trigger(player);
+            ModCriteria.STARVING_ROTTEN_FLESH.get().trigger(player);
     }
 }
