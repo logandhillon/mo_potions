@@ -1,8 +1,8 @@
 package net.ldm.mopotions.datagen;
 
-import net.ldm.mopotions.MoPotionsMod;
+import net.ldm.mopotions.MoPotions;
 import net.ldm.mopotions.criteria.trigger.StarvingRottenFleshTrigger;
-import net.ldm.mopotions.init.MoPotionsEffects;
+import net.ldm.mopotions.init.ModMobEffects;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.EffectsChangedTrigger;
@@ -48,7 +48,7 @@ public class AdvancementProvider extends ForgeAdvancementProvider {
                                .save(
                                        saver,
                                        ResourceLocation.fromNamespaceAndPath(
-                                               MoPotionsMod.MOD_ID, "adventure/iron_belly"), existingFileHelper);
+                                               MoPotions.MOD_ID, "adventure/iron_belly"), existingFileHelper);
 
             Advancement.Builder.advancement()
                                .parent(ResourceLocation.withDefaultNamespace("nether/brew_potion"))
@@ -64,11 +64,11 @@ public class AdvancementProvider extends ForgeAdvancementProvider {
                                .addCriterion(
                                        "drink_satisfaction_potion",
                                        EffectsChangedTrigger.TriggerInstance.hasEffects(
-                                               MobEffectsPredicate.effects().and(MoPotionsEffects.SATISFACTION.get())))
+                                               MobEffectsPredicate.effects().and(ModMobEffects.SATISFACTION.get())))
                                .save(
                                        saver,
                                        ResourceLocation.fromNamespaceAndPath(
-                                               MoPotionsMod.MOD_ID, "nether/drink_satisfaction"), existingFileHelper);
+                                               MoPotions.MOD_ID, "nether/drink_satisfaction"), existingFileHelper);
         }
     }
 }

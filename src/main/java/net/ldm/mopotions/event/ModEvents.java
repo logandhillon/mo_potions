@@ -1,6 +1,6 @@
 package net.ldm.mopotions.event;
 
-import net.ldm.mopotions.MoPotionsMod;
+import net.ldm.mopotions.MoPotions;
 import net.ldm.mopotions.init.ModCriteria;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Items;
@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 /**
  * @author Logan Dhillon
  */
-@Mod.EventBusSubscriber(modid = MoPotionsMod.MOD_ID, bus = Bus.FORGE)
+@Mod.EventBusSubscriber(modid = MoPotions.MOD_ID, bus = Bus.FORGE)
 public class ModEvents {
     @SubscribeEvent
     public static void onItemConsumed(LivingEntityUseItemEvent.Finish event) {
