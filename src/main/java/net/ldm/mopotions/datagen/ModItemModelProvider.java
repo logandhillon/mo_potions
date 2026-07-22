@@ -1,7 +1,7 @@
 package net.ldm.mopotions.datagen;
 
-import net.ldm.mopotions.MoPotionsMod;
-import net.ldm.mopotions.init.MoPotionsItems;
+import net.ldm.mopotions.MoPotions;
+import net.ldm.mopotions.init.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -11,11 +11,11 @@ import net.minecraftforge.common.data.ExistingFileHelper;
  */
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, MoPotionsMod.MOD_ID, existingFileHelper);
+        super(output, MoPotions.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
-        basicItem(MoPotionsItems.FERMENTED_SUGAR.get());
+        basicItem(ModItems.FERMENTED_SUGAR.get());
     }
 }

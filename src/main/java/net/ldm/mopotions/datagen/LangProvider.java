@@ -1,11 +1,10 @@
 package net.ldm.mopotions.datagen;
 
-import net.ldm.mopotions.MoPotionsMod;
-import net.ldm.mopotions.init.MoPotionsEffects;
-import net.ldm.mopotions.init.MoPotionsItems;
-import net.ldm.mopotions.init.MoPotionsPotions;
+import net.ldm.mopotions.MoPotions;
+import net.ldm.mopotions.init.ModItems;
+import net.ldm.mopotions.init.ModMobEffects;
+import net.ldm.mopotions.init.ModPotions;
 import net.minecraft.data.PackOutput;
-import net.minecraft.network.chat.Component;
 import net.minecraftforge.common.data.LanguageProvider;
 
 /**
@@ -13,13 +12,13 @@ import net.minecraftforge.common.data.LanguageProvider;
  */
 public class LangProvider extends LanguageProvider {
     public LangProvider(PackOutput pack) {
-        super(pack, MoPotionsMod.MOD_ID, "en_us");
+        super(pack, MoPotions.MOD_ID, "en_us");
     }
 
     @Override
     protected void addTranslations() {
         // Potions
-        for (Translation<String> translation: MoPotionsPotions.TRANSLATIONS) {
+        for (Translation<String> translation: ModPotions.TRANSLATIONS) {
             add("item.minecraft.potion.effect."+translation.ref, "Potion of " + translation.name);
             add("item.minecraft.splash_potion.effect."+translation.ref, "Splash Potion of " + translation.name);
             add("item.minecraft.lingering_potion.effect."+translation.ref, "Lingering Potion of " + translation.name);
@@ -27,10 +26,10 @@ public class LangProvider extends LanguageProvider {
         }
 
         // Effects
-        add(MoPotionsEffects.SATISFACTION.get(), "Satisfaction");
+        add(ModMobEffects.SATISFACTION.get(), "Satisfaction");
 
         // Items
-        add(MoPotionsItems.FERMENTED_SUGAR.get(), "Fermented Sugar");
+        add(ModItems.FERMENTED_SUGAR.get(), "Fermented Sugar");
 
         // Advancements
         addAdvancement("iron_belly", "Iron Belly", "Save yourself from starvation using rotten flesh");

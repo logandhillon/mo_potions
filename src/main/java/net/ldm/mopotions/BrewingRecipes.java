@@ -1,6 +1,6 @@
 package net.ldm.mopotions;
 
-import net.ldm.mopotions.init.MoPotionsItems;
+import net.ldm.mopotions.init.ModItems;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
@@ -12,7 +12,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import javax.annotation.Nullable;
 
-import static net.ldm.mopotions.init.MoPotionsPotions.*;
+import static net.ldm.mopotions.init.ModPotions.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BrewingRecipes {
@@ -20,7 +20,7 @@ public class BrewingRecipes {
     @SubscribeEvent
     public static void init(FMLCommonSetupEvent event) {
         //Haste
-        register(Potions.THICK, MoPotionsItems.FERMENTED_SUGAR.get(), HASTE_POTION.get(), LONG_HASTE_POTION.get(), STRONG_HASTE_POTION.get());
+        register(Potions.THICK, ModItems.FERMENTED_SUGAR.get(), HASTE_POTION.get(), LONG_HASTE_POTION.get(), STRONG_HASTE_POTION.get());
 
         //Mining Fatigue
         register(HASTE_POTION.get(), Items.FERMENTED_SPIDER_EYE, MINING_FATIGUE_POTION.get(), LONG_MINING_FATIGUE_POTION.get(), STRONG_MINING_FATIGUE_POTION.get());
