@@ -1,0 +1,31 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "(c) 2021-${year} LDM. All rights reserved."
+
+[[mods]]
+modId = "mo_potions"
+version = "${mod_version}"
+displayName = "Mo' Potions"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/mo-potions"
+logoFile = "logo.png"
+authors = "LDM"
+description = '''
+Adds more potions to Minecraft! You can now brew almost anything, from Haste to Blindness!
+'''
+
+[[accessTransformers]]
+file = "META-INF/accesstransformer.cfg"
+
+[[dependencies.mo_potions]]
+modId = "neoforge"
+type = "required"
+versionRange = "[${neo_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.mo_potions]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[${mc_version}]"
+ordering = "NONE"
+side = "BOTH"
