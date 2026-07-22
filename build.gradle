@@ -102,16 +102,19 @@ idea {
     }
 }
 
-processResources {
-    var modProperties = [
-            mod_version: project.version,
-            mc_version : mc_version,
-            year       : new Date().format("yyyy")
+var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
+    var replaceProperties = [
+            mod_version         : project.version,
+            mc_version          : mc_version,
+            year                : new Date().format("yyyy"),
+            neo_version         : neo_version,
+            loader_version_range: loader_version_range,
+            mod_id              : mod_id,
     ]
-
-    inputs.properties(modProperties)
-
+    inputs.properties replaceProperties
     filesMatching("META-INF/mods.toml") {
-        expand(modProperties)
+        expand(replaceProperties)
     }
 }
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
