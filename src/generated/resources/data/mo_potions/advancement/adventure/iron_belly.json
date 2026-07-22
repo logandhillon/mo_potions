@@ -2,21 +2,17 @@
   "parent": "minecraft:adventure/kill_a_mob",
   "criteria": {
     "ate_rotten_flesh_while_starving": {
-      "conditions": {},
-      "trigger": "mo_potions:ate_rotten_flesh_while_starving"
+      "trigger": "mo_potions:starving_rotten_flesh"
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.mo_potions.iron_belly.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
-      "item": "minecraft:rotten_flesh"
+      "count": 1,
+      "id": "minecraft:rotten_flesh"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.mo_potions.iron_belly.title"
     }

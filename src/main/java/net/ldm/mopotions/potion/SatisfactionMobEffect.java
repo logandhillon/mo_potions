@@ -17,18 +17,20 @@ public class SatisfactionMobEffect extends MobEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity entity, int amplifier) {
-        if (!(entity instanceof Player player)) return;
+    public boolean applyEffectTick(LivingEntity entity, int amplifier) {
+        if (!(entity instanceof Player player)) return false;
 
         if (player.getFoodData().getSaturationLevel() < 20)
             player.getFoodData().setSaturation(player.getFoodData().getSaturationLevel() + 1);
 
         if (player.getFoodData().getFoodLevel() < 20)
             player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() + 1);
+
+        return true;
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
-        return true;
+    public boolean shouldApplyEffectTickThisTick(int tickCount, int amplifier) {
+        return tickCount % 5 == 0;
     }
 }

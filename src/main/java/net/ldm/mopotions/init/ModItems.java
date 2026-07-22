@@ -1,22 +1,20 @@
 package net.ldm.mopotions.init;
 
-import net.ldm.mopotions.MoPotionsMod;
+import net.ldm.mopotions.MoPotions;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
-@Mod.EventBusSubscriber(modid = MoPotionsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class MoPotionsItems {
-    public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(
-            ForgeRegistries.ITEMS, MoPotionsMod.MOD_ID);
+@EventBusSubscriber
+public class ModItems {
+    public static final DeferredRegister.Items REGISTRY = DeferredRegister.createItems(MoPotions.MOD_ID);
 
-    public static final RegistryObject<Item> FERMENTED_SUGAR = REGISTRY.register(
+    public static final DeferredItem<Item> FERMENTED_SUGAR = REGISTRY.register(
             "fermented_sugar",
             () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
 
