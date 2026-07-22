@@ -47,7 +47,7 @@ public class AdvancementProvider extends ForgeAdvancementProvider {
                                        StarvingRottenFleshTrigger.TriggerInstance.instance())
                                .save(
                                        saver,
-                                       ResourceLocation.fromNamespaceAndPath(
+                                       new ResourceLocation(
                                                MoPotionsMod.MOD_ID, "adventure/iron_belly"), existingFileHelper);
 
             Advancement.Builder.advancement()
@@ -67,7 +67,7 @@ public class AdvancementProvider extends ForgeAdvancementProvider {
                                                MobEffectsPredicate.effects().and(MoPotionsEffects.SATISFACTION.get())))
                                .save(
                                        saver,
-                                       ResourceLocation.fromNamespaceAndPath(
+                                       new ResourceLocation(
                                                MoPotionsMod.MOD_ID, "nether/drink_satisfaction"), existingFileHelper);
         }
     }

@@ -13,7 +13,7 @@ import net.minecraft.server.level.ServerPlayer;
  */
 public class StarvingRottenFleshTrigger extends SimpleCriterionTrigger<StarvingRottenFleshTrigger.TriggerInstance> {
     public static final ResourceLocation ID =
-            ResourceLocation.fromNamespaceAndPath("mo_potions", "ate_rotten_flesh_while_starving");
+            new ResourceLocation("mo_potions", "ate_rotten_flesh_while_starving");
 
     @Override
     protected StarvingRottenFleshTrigger.TriggerInstance createInstance(JsonObject obj,
