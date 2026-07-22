@@ -5,7 +5,7 @@ import net.ldm.mopotions.init.ModItems;
 import net.ldm.mopotions.init.ModMobEffects;
 import net.ldm.mopotions.init.ModPotions;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.common.data.LanguageProvider;
 
 /**
  * @author Logan Dhillon
@@ -26,7 +26,7 @@ public class LangProvider extends LanguageProvider {
         }
 
         // Effects
-        add(ModMobEffects.SATISFACTION.get(), "Satisfaction");
+        add(ModMobEffects.SATISFACTION.value(), "Satisfaction");
 
         // Items
         add(ModItems.FERMENTED_SUGAR.get(), "Fermented Sugar");

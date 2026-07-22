@@ -22,7 +22,7 @@ public class StarvingRottenFleshTrigger extends SimpleCriterionTrigger<StarvingR
         trigger(player, instance -> true);
     }
 
-    public static record TriggerInstance(
+    public record TriggerInstance(
             Optional<ContextAwarePredicate> player) implements SimpleCriterionTrigger.SimpleInstance {
         public static final Codec<TriggerInstance> CODEC =
                 ContextAwarePredicate.CODEC.optionalFieldOf("player")

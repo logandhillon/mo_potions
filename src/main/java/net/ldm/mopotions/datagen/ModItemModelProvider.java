@@ -3,8 +3,8 @@ package net.ldm.mopotions.datagen;
 import net.ldm.mopotions.MoPotions;
 import net.ldm.mopotions.init.ModItems;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 /**
  * @author Logan Dhillon

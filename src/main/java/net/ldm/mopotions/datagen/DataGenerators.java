@@ -1,16 +1,15 @@
 package net.ldm.mopotions.datagen;
 
-import net.ldm.mopotions.MoPotions;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 /**
  * @author Logan Dhillon
  */
-@Mod.EventBusSubscriber(modid = MoPotions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 public class DataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
